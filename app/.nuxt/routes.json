@@ -1,0 +1,16 @@
+[
+  {
+    "name": "tree",
+    "path": "/tree",
+    "component": "C:\\\\Users\\\\GUARIN\\\\Desktop\\\\family-tree\\\\app\\\\pages\\\\tree.vue",
+    "chunkName": "pages/tree",
+    "_name": "_1cf865ba"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\GUARIN\\\\Desktop\\\\family-tree\\\\app\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_0f8c3a1d"
+  }
+]
