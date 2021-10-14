@@ -1,0 +1,5 @@
+io\jpghdev\restapi\RestapiApplication.class
+io\jpghdev\restapi\user\UserRepository.class
+io\jpghdev\restapi\ServletInitializer.class
+io\jpghdev\restapi\user\User.class
+io\jpghdev\restapi\user\UserController.class
