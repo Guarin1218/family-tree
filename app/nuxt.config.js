@@ -5,5 +5,5 @@ export default {
     modules:[
         "@nuxtjs/axios"
     ],
-    components:true
+    components:true,    
 }

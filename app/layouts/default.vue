@@ -7,10 +7,6 @@
             ><NuxtLink class="nuxt-link" to="/">Inicio</NuxtLink>
           </v-toolbar-title>
           <v-spacer></v-spacer>
-
-          <NuxtLink class="nuxt-link" to="/tree"
-            >Ver mi árbol familiar</NuxtLink
-          >
         </v-app-bar>
         <v-container justify="center" align="center">
           <client-only>

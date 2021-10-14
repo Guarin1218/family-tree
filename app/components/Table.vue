@@ -11,6 +11,9 @@
     <template v-slot:[`item.delete`]="{ item }">
       <v-btn color="warning" @click="deleteItem(item.id)">Eliminar</v-btn>
     </template>
+    <template v-slot:[`item.show`]="{ item }">
+      <nuxt-link :to="{name:'tree',params:{id:item.id,name:item.name}}">Ver árbol</nuxt-link>
+    </template>
   </v-data-table>
 </template>
 
@@ -25,6 +28,7 @@ export default {
         { text: "Padre", value: "idP" },
         { text: "Editar", value: "edit" },
         { text: "Eliminar", value: "delete" },
+        { text: "Árbol Familiar", value: "show" },
       ],
     };
   },
@@ -56,6 +60,9 @@ export default {
       this.$store.commit("user/storeIdM", user.idM);
       this.$store.commit("user/storeIdP", user.idP);
     },
+    async showTree(user){
+      console.log(user)
+    },
     showAlert() {
       var option = confirm(
         "¿Está seguro que desea eliminar este familiar?. Podría dañar las conexiones si su familiar era madre o padre."
@@ -66,6 +73,7 @@ export default {
         return false;
       }
     },
+
   },
 };
 </script>

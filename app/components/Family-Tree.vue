@@ -1,13 +1,9 @@
 <template>
   <v-form>
-    <h1>Generar mi árbol familiar!</h1>
-
-    <v-btn id="btn" @click="getFamilyTree()">Generar</v-btn>
-
     <div class="family-tree">
       <ul>
         <li>
-          <a id="me">Yo</a>
+          <a id="me">{{ $route.params.name }}</a>
           <ul id="family"></ul>
         </li>
       </ul>
@@ -42,7 +38,7 @@ export default {
       get() {
         return this.options[0].name;
       },
-    },   
+    },
   },
   async fetch() {
     this.$store.commit(
@@ -50,12 +46,15 @@ export default {
       (await this.$axios.get("http://localhost:8080/users/")).data
     );
   },
+  mounted() {
+    if (!this.validateParams()) {
+      return;
+    }
+    let id = this.$route.params.id;
+    this.findId(id);
+  },
 
   methods: {
-    getFamilyTree() {
-      this.findId(this.options[0].id);    
-      document.getElementById('btn').disabled=true; 
-    },
     findId(id) {
       if (!id) {
         return;
@@ -105,6 +104,13 @@ export default {
             "<li><a>" + dad?.name + "</a><ul id='" + user?.idP + "'></ul></li>";
         }
       }
+    },
+    validateParams() {
+      if (!this.$route.params.id || !this.$route.params.name) {
+        alert("No se pudo generar el árbol. Parámetros inválidos. Vuelva al inicio");       
+        return false;
+      }
+      return true;
     },
   },
 };

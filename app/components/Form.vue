@@ -1,8 +1,7 @@
 <template>
   <v-form>
     <br />
-    <h2>Agregar Familiar</h2>
-    <p style="font-size: 14px">*Recuerda añadirte tú primero. <strong>Si no te añades de primero, podría fallar</strong></p>
+    <h2>Agregar familiar</h2>
 
     <v-text-field v-model="name" label="Nombre"> </v-text-field>
 
@@ -121,6 +120,12 @@ export default {
           );
           return false;
         }
+      }
+      if (this.id == this.idM && this.id!=0 || this.id == this.idP && this.id!=0) {
+        alert(
+          "No puede poner la persona como madre o padre, porque no puede ser madre o padre de él mismo."
+        );
+        return false;
       }
       return true;
     },

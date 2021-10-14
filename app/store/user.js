@@ -2,7 +2,7 @@ export const state = () => ({
     id: 0,
     name:"",
     idM:0,
-    idP:0
+    idP:0,
 })
 
 export const mutations={
@@ -17,5 +17,6 @@ export const mutations={
     },
     storeIdP:(state,data)=>{
         state.idP=data
-    }
+    },
+  
 }
