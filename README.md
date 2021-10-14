@@ -5,10 +5,15 @@
 
 //Pasos para inicializar el backend
 
+- Situarse en el directorio restapi
+
 - ejecutar: docker-compose up 
 
 
+
 //Pasos para inicializar el frontend
+
+- situarse en el directorio app
 
 - ejecutar: docker compose up
 
